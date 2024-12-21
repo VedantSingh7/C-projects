@@ -1,0 +1,55 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+
+int Winner(int userChoice, int computerChoice){
+if (userChoice == computerChoice) { printf("It's a tie\n"); } 
+else if ((userChoice == 1 && computerChoice == 3) || 
+         (userChoice == 2 && computerChoice == 1) || 
+         (userChoice == 3 && computerChoice == 2)) 
+{ printf("You win!\n");
+}
+  else { printf("You lose!\n");
+}
+}
+int main(){
+      int userChoice, computerChoice;
+    srand(time(NULL));
+    computerChoice = (rand() % 3) + 1;
+
+    printf("Welcome to Rock Paper Scissor game\n");
+
+printf("Rock=1\nPaper=2\nScissor=3\n");
+
+printf("Enter Your choice:");
+scanf("%d",&userChoice);
+
+if (userChoice < 1 || userChoice > 3) {
+        printf("Invalid choice, please select a number between 1 and 3.\n");
+        return 1;
+    }
+
+if(userChoice==1 ){
+  printf("Your Choice:Rock\n");
+}
+else if(userChoice==2){
+  printf("Your Choice:Paper\n");
+}
+else if(userChoice==3){
+  printf("Your Choice:Scissor\n");
+}
+
+if(computerChoice==1 ){
+  printf("Computer Choice:Rock\n");
+}
+else if(computerChoice==2){
+  printf("Computer Choice:Paper\n");
+}
+else if(computerChoice==3){
+  printf("Computer Choice:Scissor\n");
+}
+printf("", Winner(userChoice,computerChoice));
+
+    return 0;
+  
+}
